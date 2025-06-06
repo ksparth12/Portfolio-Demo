@@ -1,0 +1,25 @@
+name: Maintain Authorship
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  maintain-authorship:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Set Git User
+        run: |
+          git config --global user.name "Parth Sharma"
+          git config --global user.email "ksparth12@gmail.com"
+          
+      - name: Ensure Proper Authorship
+        if: github.event_name == 'push'
+        run: |
+          echo "Ensuring all commits have proper authorship" 

@@ -1,0 +1,7 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Don't include these files in language stats
+*.lock binary
+node_modules/* linguist-vendored
+public/* linguist-vendored 

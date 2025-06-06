@@ -1,0 +1,118 @@
+#root {
+  /* Remove these problematic styles that are causing gaps */
+  /*max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;*/
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Custom cursor styles */
+* {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(147, 51, 234, 0.3);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(216, 180, 254, 0.5);
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background-color: #a855f7;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.custom-cursor.hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(147, 51, 234, 0.2);
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.5);
+  backdrop-filter: blur(2px);
+  mix-blend-mode: normal;
+}
+
+.custom-cursor-trail {
+  backdrop-filter: blur(0.5px);
+}
+
+/* Interactive elements should show they're clickable */
+a, button, [role="button"], input[type="button"], input[type="submit"], 
+.clickable, .cursor-pointer, .interactive, [class*="hover"], 
+.motion-button, .card, select, input, textarea {
+  cursor: none !important;
+}
+
+/* Add subtle glow effect to interactive elements on hover */
+a:hover, button:hover, [role="button"]:hover, input[type="button"]:hover, 
+input[type="submit"]:hover, .clickable:hover, .cursor-pointer:hover, 
+.interactive:hover, [class*="hover"]:hover, .card:hover {
+  filter: brightness(1.1);
+  transition: filter 0.3s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .custom-cursor, .cursor-dot, .custom-cursor-trail {
+    display: none;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  a, button, [role="button"], input[type="button"], input[type="submit"], 
+  .clickable, .cursor-pointer, .interactive {
+    cursor: pointer !important;
+  }
+}
